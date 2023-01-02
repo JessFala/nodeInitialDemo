@@ -3,7 +3,7 @@ require('dotenv').config(); // Para requerir archivo .env
 const express = require('express');
 const app = express();
 
-const {connectSequelize} = require('./src/bbdd/bd_mysql.js');
+const { connectSequelize } = require('./src/bbdd/bd_mysql.js');
 
 connectSequelize();
 
