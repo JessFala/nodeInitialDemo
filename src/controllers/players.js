@@ -102,7 +102,7 @@ const listaJugadores = async (req, res) => {
   try {
 
     const jugadores = await Jugador.findAll();
-    res.status(200).json(jugadores);
+    res.status(200).json({jugadores});
   
   } catch (err) {
     return res.status(500).send({
