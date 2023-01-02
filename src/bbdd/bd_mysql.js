@@ -1,6 +1,5 @@
 const {Sequelize} = require('sequelize'); //Requerir CLASE sequelize
 const mysql = require('mysql2/promise');
-//const config = require('../config/config');
 const { mysqlConfig } = require('../config/config');
 
 //const { port, host, username, password } = require('../config/config');
