@@ -1,51 +1,82 @@
-
-# Node Initial Project
-
-### Project Structure
-
-Main structure of node.js project. Folders / files:
-
-- <b>\_\_tests__</b>. Tests folder. See [Jest Docs](https://jestjs.io/es-ES/docs/configuration) and [Chai Docs](https://www.chaijs.com/)
-- <b>app</b>:
-    - <b>config</b>
-    - <b>controllers</b>
-    - <b>middlewares</b>
-    - <b>models</b>
-    - <b>routes</b>
-    - <b>helpers</b>
-    - <b>app.js</b>. Entry point.
-- <b>package.json</b>.
-- <b>.env</b>. Environment descriptor. See [dotenv doc](https://www.npmjs.com/package/dotenv).
-
-Extras:
-- <b>.eslintrc</b>. Linter JS, static code analyzer. See [EsLint Docs](https://eslint.org/docs/user-guide/configuring/configuration-files).
-- <b>.prettierignore</b>. Code formatter. See [Prettier Config](https://prettier.io/docs/en/configuration.html) and [Prettier Ignore](https://prettier.io/docs/en/ignore.html).
-- <b>.ecosystem.config.js</b>. Process Manage at runtime. See [PM2 Docs](https://pm2.keymetrics.io/).
-
-### Import project for use with Visual Studio Code
-
-Follow the steps below:
-* Clone the project from the Github Platform. Execute:
-  ```
-  git clone [url project]
-  ```
-* Open the project downloaded.
-  ![Open Project](img/VSC_open.png)
+# Sprint 5.1: 
+Los WebSockets son una tecnología que permite la comunicación instantánea entre cliente y servidor. En este sprint se programa un chat con Sockets.io y Node.js.
 
 
-### Import project for use with WebStorm
+## Requisitos: 🚦 🚧
 
-Follow the steps below:
-* Clone the project from the Github Platform. Execute:
-  ```
-  git clone [url project]
-  ```
-* Open the project downloaded.
-![Open Project](img/webstorm_open.png)
+  ### 1- Clonar el proyecto
+
+      $ git clone [url project]
+      
+     
+  🆘 Consulta: 
+
+      https://docs.github.com/es/repositories/creating-and-managing-repositories/cloning-a-repository
 
 
-### Utilities
+  ### 2- Instalar las dependencias de las dos partes (carpetas) del proyecto: 'client' y 'server':
 
-* [Node Developers Guide](https://nodejs.dev/learn)
-* **.gitignore file** configuration. See [Official Docs](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files).
-* **Git branches**. See [Official Docs](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
+      npm install
+
+  🆘 Consulta el **package.json de cada una de las partes** ('client' y 'server'):    
+  
+      * node.js
+      * socket.io
+      * MongoDB
+      * bcrypt
+      * express
+      * dotenv
+      * JWT
+      * ...   
+
+   👩‍💻 devDependencies:
+    
+      * nodemon
+
+  ### 3- Modificar las variables de entorno:  🏗️ 
+
+  **⚠️** :
+
+        .env-template > copiar variables > modifica los valores correspondientes en 
+        un nuevo documento .env
+
+## Para ejecutar tanto la parte 'client' como la parte 'server': 👷‍♀️ 
+
+*Duplica la consola y levanta el servidor **de cada parte** con su respectivo puerto:
+
+      -Parte 'client': 
+            [modo desarrollo]: nodemon app.js 
+
+      -Parte 'server': 
+            [modo desarrollo]: nodemon app.js 
+
+## Estructura general del proyecto:  🏗️ + 👷‍♀️ = 🏛️ 
+
+    CLIENT
+         - Public
+             - CSS
+             - JS
+             - .html --> Estructura/contenido .htmls:
+                    .index.html -> chat
+                    .login.html -> login
+                    .register.html -> registro usuarios
+
+         - app.js -> servidor frontend
+         
+    SERVER
+         - controllers
+         - db
+             - connectDB() -> 
+         - models
+             - Rooms.js
+             - Users.js
+         - routes 
+             - login.js
+             - register.js
+         - sockets
+         - utils
+         - app.js
+
+         
+
+
